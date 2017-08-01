@@ -14,10 +14,12 @@ var revealPoint = function(point) {
          animatePoints(pointsArray);
     }
 
-      window.addEventListener('scroll', function(event) {
+      window.addEventListener("scroll", function(event) {
+        var sellingPoints = document.getElementsByClassName('selling-points')[0];
+        var scrollDistance = sellingPoints.getBoundingClientRect().top - window.innerHeight + 200;
+
         if (document.documentElement.scrollTop || document.body.scrollTop>= scrollDistance) {
           animatePoints(pointsArray);
         }
       });
     }
-  
